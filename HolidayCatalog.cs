@@ -1,12 +1,12 @@
 namespace CzechHolidays;
 internal class HolidayCatalog
 {
-    internal HolidayCatalog(EasterCalculator easterCalculator)
+    internal HolidayCatalog(IEasterCalculator easterCalculator)
     {
         this.easterCalculator = easterCalculator;
     }
 
-    private readonly EasterCalculator easterCalculator;
+    private readonly IEasterCalculator easterCalculator;
 
     public IEnumerable<Holiday> GetCzechCatalog(int year)
     {

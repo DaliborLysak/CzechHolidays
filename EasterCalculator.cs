@@ -1,5 +1,5 @@
 namespace CzechHolidays;
-internal class EasterCalculator
+internal class EasterCalculator : IEasterCalculator
 {
     public Holiday GetEasterDependedDay(int year, int dayShift, string name, string description)
     {
