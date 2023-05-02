@@ -12,7 +12,7 @@ public class EasterCalculatorTest
     {
         var easterCalculator = new EasterCalculator();
 
-        var actualHoliday = easterCalculator.GetEasterDependedDay(actualYear, 0, string.Empty, string.Empty);
+        var actualHoliday = easterCalculator.GetEasterDependedDay(actualYear, 0, string.Empty, string.Empty, false);
 
         Assert.Equal(expectedMonth, actualHoliday.MonthNumber);
         Assert.Equal(expectedDay, actualHoliday.DayNumber);

@@ -1,11 +1,19 @@
 namespace CzechHolidays;
 internal class EasterCalculator : IEasterCalculator
 {
-    public Holiday GetEasterDependedDay(int year, int dayShift, string name, string description)
+    public Holiday GetEasterDependedDay(int year, int dayShift, string name, string description, bool shopsOpen)
     {
         var easterSunday = this.GetEasterSunday(year);
         var date = new DateTime(year, easterSunday.MonthNumber, easterSunday.DayNumber).AddDays(dayShift);
-        return new Holiday() { YearNumber = year, MonthNumber = date.Month, DayNumber = date.Day, Name = name, Description = description };
+        return new Holiday()
+        {
+            YearNumber = year,
+            MonthNumber = date.Month,
+            DayNumber = date.Day,
+            Name = name,
+            Description = description,
+            ShopsOpen = shopsOpen
+        };
     }
 
     private Holiday GetEasterSunday(int year)

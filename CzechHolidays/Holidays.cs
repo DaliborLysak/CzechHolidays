@@ -10,8 +10,13 @@ public class Holidays
     private readonly EasterCalculator easterCalculator;
     private readonly HolidayCatalog holidayCatalog;
 
-    public IEnumerable<Holiday> GetCzechCatalogForYear(int year)
+    public IEnumerable<Holiday> GetCatalogForYear(int year)
     {
-        return this.holidayCatalog.GetCzechCatalog(year);
+        return this.holidayCatalog.GetCatalog(year);
+    }
+
+    public IEnumerable<Holiday> GetOpenShopsDays()
+    {
+        return this.holidayCatalog.GetCatalog(2000).Where(d => d.ShopsOpen == true);
     }
 }
