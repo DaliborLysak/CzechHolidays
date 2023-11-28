@@ -15,6 +15,11 @@ public class Holiday
 
     public override string ToString()
     {
-        return $"{this.AsDateTime().ToString("dd.MM.yyyy")} {this.Name} {this.Description}";
+        return $"{this.AsDateTime().ToString("dd.MM.yyyy ddd")} {this.Name} {this.Description}";
+    }
+
+    public string ToString(string dateFormat)
+    {
+        return $"{this.AsDateTime().ToString(dateFormat)} {this.Name} {this.Description}";
     }
 }
